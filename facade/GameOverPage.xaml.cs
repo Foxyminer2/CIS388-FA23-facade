@@ -22,13 +22,14 @@ public partial class GameOverPage : ContentPage
 	}
 
 	//private string result;
-	//public string Result {
+	//public string Result
+	//{
 	//	get => result;
 	//	set
 	//	{
 	//		result = value;
-	//           ResultLabel.Text = "You " + result;
-	//       }
+	//		ResultLabel.Text = "You " + result;
+	//	}
 	//}
 
 	public GameOverPage()

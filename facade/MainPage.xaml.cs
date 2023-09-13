@@ -13,9 +13,15 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
-    async void Button_Clicked(object sender, EventArgs e)
+	//private void OnCounterClicked(object sender, EventArgs e)
+	//{
+		
+	//}
+
+    async void Button_Clicked(System.Object sender, System.EventArgs e)
     {
-        await Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}");
+
+		await Shell.Current.GoToAsync("GameOverPage");
     }
 }
 

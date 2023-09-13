@@ -4,10 +4,13 @@
              x:Class="facade.GameOverPage"
              Title="GameOverPage">
     <VerticalStackLayout>
-        <Label
+
+         <Label
             x:Name="ResultLabel"
             Text="{Binding Result}"
-            FontSize="Title"
+            FontSize="Title"/>
+        <Label 
+            Text="You Won!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>
