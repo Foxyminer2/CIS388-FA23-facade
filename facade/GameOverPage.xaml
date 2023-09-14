@@ -2,8 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="facade.GameOverPage"
+             BackgroundColor="Black"
              Title="GameOverPage">
-    <VerticalStackLayout>
+    <VerticalStackLayout TranslationY="100">
 
          <Label
             x:Name="ResultLabel"
@@ -11,7 +12,49 @@
             FontSize="Title"/>
         <Label 
             Text="You Won!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            FontSize="70"
+            VerticalOptions="Center"
+            FontFamily="Pixel"
+            HorizontalOptions="Center"
+            TranslationX="-3"
+            TextColor="white"/>
+        <Label 
+            Text="You Won!"
+            FontSize="70"
+            VerticalOptions="Center"
+            FontFamily="Pixel"
+            HorizontalOptions="Center"
+            TextColor="HotPink"
+            TranslationY="-94"
+            TranslationX="-5"/>
+        <Label 
+            Text="You Won!"
+            FontSize="70"
+            VerticalOptions="Center"
+            FontFamily="Pixel"
+            HorizontalOptions="Center"
+            TextColor="cyan"
+            TranslationY="-187"
+            TranslationX="4"/>
+
+        <RoundRectangle Grid.Row="0" Fill="#facade" MaximumHeightRequest="120" MaximumWidthRequest="350" CornerRadius="40" TranslationY="-150"/>
+        <Label Text="# facade"
+               FontSize="75"
+               TranslationX="40"
+               TranslationY="-260"
+               />
+
+        <RoundRectangle  Fill="lightgreen" CornerRadius="180" MaximumHeightRequest="240" MaximumWidthRequest="240" TranslationY="-200" TranslationX="0" />
+        <RoundRectangle  Fill="#black" CornerRadius="10" MaximumHeightRequest="20" MaximumWidthRequest="80" TranslationX="-40" TranslationY="-260" Rotation="28"/> 
+        <RoundRectangle  Fill="#black" CornerRadius="10" MaximumHeightRequest="20" MaximumWidthRequest="180" TranslationX="30" TranslationY="-340" Rotation="120"/> 
+
+        <Button
+            BackgroundColor="white" MaximumHeightRequest="80" MaximumWidthRequest="80" TranslationY="-240" TranslationX="-150"/>
+        <Label Text="# facade"
+               FontSize="75"
+               TranslationX="40"
+               TranslationY="-260"
+               />
+            
     </VerticalStackLayout>
 </ContentPage>
