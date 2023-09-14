@@ -5,7 +5,7 @@
              Title="#facade"
              >
 
-    <ScrollView>
+    <ScrollView BackgroundColor="Black">
         <Grid Padding="0" RowSpacing="16">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -28,7 +28,8 @@
                     Text="# FACADE"
                        FontSize="60"
                        Grid.Row="0"
-                       Margin="40" />
+                       Margin="40"
+                       TextColor="White"/>
             </StackLayout>
 
             <Grid Padding="12" Grid.Row="1" RowSpacing="12" ColumnSpacing="12">
@@ -65,24 +66,24 @@
                 <Button Grid.Row="1"
                     Grid.Column="0"
                     Text=""
-                    BackgroundColor="Transparent"
-                    BorderColor="#111"
+                    BackgroundColor="White"
+                    BorderColor="White"
                     BorderWidth="1"
                     FontSize="16"
                     IsEnabled="false "/>
                 <Button Grid.Row="1"
                     Grid.Column="1"
                     Text=""
-                    BackgroundColor="Transparent"
-                    BorderColor="#111"
+                    BackgroundColor="White"
+                    BorderColor="White"
                     BorderWidth="1"
                     FontSize="16"
                     IsEnabled="false "/>
                 <Button Grid.Row="1"
                     Grid.Column="2"
                     Text=""
-                    BackgroundColor="Transparent"
-                    BorderColor="#111"
+                    BackgroundColor="White"
+                    BorderColor="White"
                     BorderWidth="1"
                     FontSize="16"
                     IsEnabled="false "/>
@@ -185,8 +186,8 @@
                     Text="⌫"
                     WidthRequest="60"
                     HeightRequest="60"
-                    BackgroundColor="Transparent"
-                    TextColor="#333"
+                    BackgroundColor="#666"
+                    TextColor="White"
                     BorderWidth="0"
                     FontSize="36"
                 />
