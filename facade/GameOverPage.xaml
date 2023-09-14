@@ -50,10 +50,10 @@
 
         <Button
             BackgroundColor="white" MaximumHeightRequest="80" MaximumWidthRequest="80" TranslationY="-240" TranslationX="-150"/>
-        <Label Text="# facade"
-               FontSize="75"
-               TranslationX="40"
-               TranslationY="-260"
+        <Label Text="NEW"
+               FontSize="30"
+               TranslationX="13"
+               TranslationY="-283"
                />
             
     </VerticalStackLayout>
