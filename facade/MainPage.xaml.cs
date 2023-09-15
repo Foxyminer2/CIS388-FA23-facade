@@ -6,7 +6,8 @@ public partial class MainPage : ContentPage
 {
 	int count = 0;
 
-	public bool DidWin { get; set; } = false;
+	public bool DidWin { get; set; } = true;
+
 
 	public MainPage()
 	{
@@ -21,7 +22,7 @@ public partial class MainPage : ContentPage
     async void Button_Clicked(System.Object sender, System.EventArgs e)
     {
 
-		await Shell.Current.GoToAsync("GameOverPage");
+		await Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}");
     }
 }
 

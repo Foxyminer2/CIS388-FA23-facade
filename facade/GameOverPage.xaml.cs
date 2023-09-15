@@ -13,6 +13,7 @@ public partial class GameOverPage : ContentPage
 			if(didWin)
 			{
 				ResultLabel.Text = "You Won!";
+				
 			}
 			else
 			{

@@ -4,38 +4,49 @@
              x:Class="facade.GameOverPage"
              BackgroundColor="Black"
              Title="GameOverPage">
-    <VerticalStackLayout TranslationY="100">
+
+  <VerticalStackLayout TranslationY="100">
+
+        
 
          <Label
             x:Name="ResultLabel"
             Text="{Binding Result}"
-            FontSize="Title"/>
-        <Label 
-            Text="You Won!"
             FontSize="70"
             VerticalOptions="Center"
             FontFamily="Pixel"
             HorizontalOptions="Center"
             TranslationX="-3"
             TextColor="white"/>
+
         <Label 
-            Text="You Won!"
+            Text="You Won"
             FontSize="70"
             VerticalOptions="Center"
             FontFamily="Pixel"
             HorizontalOptions="Center"
             TextColor="HotPink"
             TranslationY="-94"
-            TranslationX="-5"/>
+            TranslationX="-10"/>
+        
+        <!--<Label 
+            Text=""
+            FontSize="70"
+            VerticalOptions="Center"
+            FontFamily="Pixel"
+            HorizontalOptions="Center"
+            TranslationX="-3"
+            TextColor="white"/>-->
+        
         <Label 
-            Text="You Won!"
+            Text="You Won"
             FontSize="70"
             VerticalOptions="Center"
             FontFamily="Pixel"
             HorizontalOptions="Center"
             TextColor="cyan"
             TranslationY="-187"
-            TranslationX="4"/>
+            TranslationX="-4"/>
 
         <RoundRectangle Grid.Row="0" Fill="#facade" MaximumHeightRequest="120" MaximumWidthRequest="350" CornerRadius="40" TranslationY="-150"/>
         <Label Text="# facade"
