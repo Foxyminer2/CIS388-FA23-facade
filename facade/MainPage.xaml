@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="facade.MainPage"
              Title="#facade"
+             xmlns:local="clr-namespace:facade"
+             x:DataType="local:MainPageViewModel"
              >
 
     <ScrollView BackgroundColor="Black">
@@ -17,22 +19,47 @@
 
             
 
-            <RoundRectangle Grid.Row="0" Fill="#facade" CornerRadius="180" MaximumHeightRequest="240" MaximumWidthRequest="240" TranslationY="70" /> 
+            <RoundRectangle Grid.Row="0" Fill="#facade" CornerRadius="180" MaximumHeightRequest="240" MaximumWidthRequest="240" TranslationY="30" /> 
             
                        
             <StackLayout HorizontalOptions="Fill"  Padding="8" Grid.Row="0" Orientation="Horizontal"  >
 
                 <!--<Label Text="#" FontSize="60" VerticalOptions="Start" Margin="20"/>-->
                 
-            <Label
-                    Text="# FACADE"
+            <!--<Label
+                    Text="{Binding CurrentGuess}"
                        FontSize="60"
                        Grid.Row="0"
                        Margin="40"
-                       TextColor="White"/>
+                       TextColor="White"/>-->
             </StackLayout>
 
-            <Grid Padding="12" Grid.Row="1" RowSpacing="12" ColumnSpacing="12">
+            <CollectionView
+                Grid.Row="1"
+                ItemsSource="{Binding Guesses}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout
+                        Orientation="Vertical"
+                        Span="3"
+                        />
+
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="local:ColorGuess">
+                        <Button 
+                        Text="{Binding Guess}"
+                        BackgroundColor="{Binding Color}"
+                        TextColor="Black"
+                        FontSize="16"
+                        IsEnabled="false "/>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                
+
+            </CollectionView>
+
+            <!--<Grid Padding="12" Grid.Row="1" RowSpacing="12" ColumnSpacing="12">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
@@ -112,6 +139,9 @@
                     BackgroundColor="#666"
                     TextColor="White"
                     FontSize="48"
+
+                    Command="{Binding AddLetterCommand}"
+                    CommandParameter="A"
                 />
                 <Button Grid.Row="0"
                     Grid.Column="1"
@@ -120,8 +150,10 @@
                     HeightRequest="80"
                     BackgroundColor="#666"
                     TextColor="White"
-
                     FontSize="48"
+
+                    Command="{Binding AddLetterCommand}"
+                    CommandParameter="B"
                 />
                 <Button Grid.Row="0"
                     Grid.Column="2"
@@ -132,6 +164,9 @@
                     TextColor="White"
 
                     FontSize="48"
+
+                    Command="{Binding AddLetterCommand}"
+                    CommandParameter="C"
                 />
                 <Button Grid.Row="1"
                     Grid.Column="0"
@@ -142,6 +177,9 @@
                     TextColor="White"
 
                     FontSize="48"
+
+                    Command="{Binding AddLetterCommand}"
+                    CommandParameter="D"
                 />
                 <Button Grid.Row="1"
                     Grid.Column="1"
@@ -152,6 +190,9 @@
                     TextColor="White"
 
                     FontSize="48"
+
+                    Command="{Binding AddLetterCommand}"
+                    CommandParameter="E"
                 />
                 <Button Grid.Row="1"
                     Grid.Column="2"
@@ -162,6 +203,9 @@
                     TextColor="White"
 
                     FontSize="48"
+
+                    Command="{Binding AddLetterCommand}"
+                    CommandParameter="F"
                 />
                 <Button Grid.Row="0"
                     Grid.Column="3"
@@ -193,7 +237,7 @@
                 />
 
 
-            </Grid>
+            </Grid>-->
         </Grid>
 
     </ScrollView>

@@ -2,7 +2,7 @@
 
 namespace facade;
 
-public partial class MainPage : ContentPage
+public partial class MainPage: ContentPage
 {
 	int count = 0;
 
