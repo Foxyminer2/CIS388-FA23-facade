@@ -19,38 +19,35 @@
 
             
 
-            <RoundRectangle Grid.Row="0" Fill="beige" CornerRadius="90" MaximumHeightRequest="100" MaximumWidthRequest="340" TranslationY="-30" /> 
+            <RoundRectangle Grid.Row="0" Fill="beige" CornerRadius="90" MaximumHeightRequest="100" MaximumWidthRequest="370" TranslationY="-30" /> 
 
             <RoundRectangle Grid.Row="0" Fill="#facade" CornerRadius="180" MaximumHeightRequest="100" MaximumWidthRequest="100" TranslationY="90"/> 
             
                        
             <StackLayout HorizontalOptions="Fill"  Padding="8" Grid.Row="0" Orientation="Horizontal"  >
 
-                <!--<Label Text="#" FontSize="60" VerticalOptions="Start" Margin="20"/>-->
 
             <Label
                     Text="#"
                     FontSize="80"
                     TextColor="Black"
-                    TranslationX="40"
-                    TranslationY="30"
-                    />
+                    TranslationX="25"
+                    TranslationY="35"/>
 
             <Label
                     Text="?"
                     FontSize="80"
                     TextColor="Black"
                     TranslationX="120"
-                    TranslationY="155"
-                    
-                    />
+                    TranslationY="155"/>
                 
             <Label
                     Text="{Binding CurrentGuess}"
                        FontSize="60"
                        Grid.Row="0"
                        Margin="47"
-                       TranslationX="-30"
+                       TranslationX="-45"
+                       TranslationY="3"
                        TextColor="Black"/>
             </StackLayout>
 
@@ -77,63 +74,6 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <!--<Grid Padding="12" Grid.Row="1" RowSpacing="12" ColumnSpacing="12">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <Button Grid.Row="0"
-                    Grid.Column="0"
-                    Text="#beaded"
-                    BackgroundColor="#beaded"
-                    FontSize="16"
-                    IsEnabled="false "/>
-                <Button Grid.Row="0"
-                    Grid.Column="1"
-                    Text="#fadedd"
-                    BackgroundColor="#fadedd"
-                    FontSize="16"
-                    IsEnabled="false "/>
-                <Button Grid.Row="0"
-                    Grid.Column="2"
-                    Text="#beefed"
-                    BackgroundColor="#beefed"
-                    FontSize="16"
-                    IsEnabled="false "/>
-
-                <Button Grid.Row="1"
-                    Grid.Column="0"
-                    Text=""
-                    BackgroundColor="White"
-                    BorderColor="White"
-                    BorderWidth="1"
-                    FontSize="16"
-                    IsEnabled="false "/>
-                <Button Grid.Row="1"
-                    Grid.Column="1"
-                    Text=""
-                    BackgroundColor="White"
-                    BorderColor="White"
-                    BorderWidth="1"
-                    FontSize="16"
-                    IsEnabled="false "/>
-                <Button Grid.Row="1"
-                    Grid.Column="2"
-                    Text=""
-                    BackgroundColor="White"
-                    BorderColor="White"
-                    BorderWidth="1"
-                    FontSize="16"
-                    IsEnabled="false "/>
-
-            </Grid>-->
 
             <Grid Padding="12" Grid.Row="2" RowSpacing="12" ColumnSpacing="12">
                 <Grid.RowDefinitions>
