@@ -19,19 +19,39 @@
 
             
 
-            <RoundRectangle Grid.Row="0" Fill="#facade" CornerRadius="180" MaximumHeightRequest="240" MaximumWidthRequest="240" TranslationY="30" /> 
+            <RoundRectangle Grid.Row="0" Fill="beige" CornerRadius="90" MaximumHeightRequest="100" MaximumWidthRequest="340" TranslationY="-30" /> 
+
+            <RoundRectangle Grid.Row="0" Fill="#facade" CornerRadius="180" MaximumHeightRequest="100" MaximumWidthRequest="100" TranslationY="90"/> 
             
                        
             <StackLayout HorizontalOptions="Fill"  Padding="8" Grid.Row="0" Orientation="Horizontal"  >
 
                 <!--<Label Text="#" FontSize="60" VerticalOptions="Start" Margin="20"/>-->
+
+            <Label
+                    Text="#"
+                    FontSize="80"
+                    TextColor="Black"
+                    TranslationX="40"
+                    TranslationY="30"
+                    />
+
+            <Label
+                    Text="?"
+                    FontSize="80"
+                    TextColor="Black"
+                    TranslationX="120"
+                    TranslationY="155"
+                    
+                    />
                 
-            <!--<Label
+            <Label
                     Text="{Binding CurrentGuess}"
                        FontSize="60"
                        Grid.Row="0"
-                       Margin="40"
-                       TextColor="White"/>-->
+                       Margin="47"
+                       TranslationX="-30"
+                       TextColor="Black"/>
             </StackLayout>
 
             <CollectionView
@@ -235,7 +255,7 @@
                 />
 
 
-            </Grid>-->
+            </Grid>
         </Grid>
 
     </ScrollView>
