@@ -8,8 +8,8 @@ public partial class MainPage: ContentPage
 
 	public bool DidWin { get; set; } = true;
 
-
-	public MainPage()
+    public Uri Navigate { get; private set; }
+    public MainPage()
 	{
 		InitializeComponent();
 
@@ -26,6 +26,12 @@ public partial class MainPage: ContentPage
 
 		await Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}");
     }
+
+
+    
+
+
+
 }
 
 

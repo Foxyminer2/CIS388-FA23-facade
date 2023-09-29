@@ -20,10 +20,11 @@ namespace facade
 
 
         public ObservableCollection<ColorGuess> Guesses { get; set; }
+        
 
-		//public string SecretColor { get; set; }
+        //public string SecretColor { get; set; }
 
-		public MainPageViewModel()
+        public MainPageViewModel()
 		{
 			secretColor = "FACADE";
 			currentGuess = "";
@@ -46,6 +47,12 @@ namespace facade
 				CurrentGuess += letter;
 			}
 		}
+
+        [RelayCommand]
+        void BackSpace()
+        {
+            CurrentGuess = CurrentGuess.Substring(0, CurrentGuess.Length-1);
+        }
 
         [RelayCommand]
         async void Guess()
@@ -71,8 +78,15 @@ namespace facade
 
 			else
 			{
-                Guesses.Add(new ColorGuess(CurrentGuess));
-                CurrentGuess = string.Empty;
+				if(CurrentGuess.Length!=6){
+					Console.WriteLine("Finish writing");
+				}
+				else
+				{
+                    Guesses.Add(new ColorGuess(CurrentGuess));
+                    CurrentGuess = string.Empty;
+                }
+                
             }
 
 			// else if this is the 6th guess (and it's wrong)
@@ -84,9 +98,12 @@ namespace facade
            
         }
 
-        
-
-
+		[RelayCommand]
+		async Task NewPage()
+		{
+			await Shell.Current.GoToAsync($"..");
+		}
+		
 
     }
 }

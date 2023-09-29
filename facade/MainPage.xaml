@@ -193,6 +193,7 @@
                     TextColor="White"
                     BorderWidth="0"
                     FontSize="36"
+                    Command="{Binding BackSpaceCommand}"
                 />
 
 
