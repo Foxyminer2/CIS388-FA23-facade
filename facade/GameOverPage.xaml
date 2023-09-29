@@ -3,13 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="facade.GameOverPage"
              BackgroundColor="Black"
-             Title="GameOverPage">
+             Title="GameOverPage"
+             >
+
+             
 
   <VerticalStackLayout TranslationY="100">
 
          <Label
             x:Name="ResultLabel"
-            Text="{Binding Name}"
+            Text="{Binding Result}"
             FontSize="70"
             VerticalOptions="Center"
             FontFamily="Pixel"
@@ -17,8 +20,9 @@
             TranslationX="-3"
             TextColor="white"/>
 
-        <Label 
-            Text="You Won!"
+        <Label
+            
+            Text="{Binding Result}"
             FontSize="70"
             VerticalOptions="Center"
             FontFamily="Pixel"
@@ -28,7 +32,7 @@
             TranslationX="-10"/>
         
         <Label 
-            Text="You Won!"
+            Text="{Binding Result}"
             FontSize="70"
             VerticalOptions="Center"
             FontFamily="Pixel"
@@ -37,23 +41,24 @@
             TranslationY="-187"
             TranslationX="-4"/>
 
-        <RoundRectangle Grid.Row="0" Fill="#facade" MaximumHeightRequest="120" MaximumWidthRequest="350" CornerRadius="40" TranslationY="-150"/>
-        <Label Text="# facade"
-               FontSize="75"
+        <RoundRectangle Grid.Row="0" Fill="#facade" MaximumHeightRequest="120" MaximumWidthRequest="350" CornerRadius="50" TranslationY="-150"/>
+        <Label Text="# FACADE"
+               FontSize="68"
                TranslationX="40"
                TranslationY="-260"
                />
 
-        <RoundRectangle  Fill="lightgreen" CornerRadius="180" MaximumHeightRequest="240" MaximumWidthRequest="240" TranslationY="-200" TranslationX="0" />
+        <!--<RoundRectangle  Fill="lightgreen" CornerRadius="180" MaximumHeightRequest="240" MaximumWidthRequest="240" TranslationY="-200" TranslationX="0" />
         <RoundRectangle  Fill="#black" CornerRadius="10" MaximumHeightRequest="20" MaximumWidthRequest="80" TranslationX="-40" TranslationY="-260" Rotation="28"/> 
-        <RoundRectangle  Fill="#black" CornerRadius="10" MaximumHeightRequest="20" MaximumWidthRequest="180" TranslationX="30" TranslationY="-340" Rotation="120"/> 
+        <RoundRectangle  Fill="#black" CornerRadius="10" MaximumHeightRequest="20" MaximumWidthRequest="180" TranslationX="30" TranslationY="-340" Rotation="120"/>--> 
 
-        <Button
-            BackgroundColor="white" MaximumHeightRequest="80" MaximumWidthRequest="80" TranslationY="-240" TranslationX="-150"/>
-        <Label Text="NEW"
-               FontSize="30"
-               TranslationX="13"
-               TranslationY="-283"
+        <Button  BackgroundColor="white" MinimumHeightRequest="85" MaximumWidthRequest="200"
+            Text="NEW"
+            TextColor="Black"
+               FontSize="60"
+               Command="{Binding newPageCommand}"
+               HorizontalOptions="Center"
+               TranslationY="-85"
                />
             
     </VerticalStackLayout>

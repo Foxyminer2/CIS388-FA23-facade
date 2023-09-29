@@ -22,18 +22,24 @@ public partial class GameOverPage : ContentPage
 		}
 	}
 
-	//private string result;
-	//public string Result
-	//{
-	//	get => result;
-	//	set
-	//	{
-	//		result = value;
-	//		ResultLabel.Text = "You " + result;
-	//	}
-	//}
+    async void Button_Clicked(System.Object sender, System.EventArgs e)
+    {
 
-	public GameOverPage()
+        await Shell.Current.GoToAsync($"{nameof(MainPage)}");
+    }
+
+    //private string result;
+    //public string Result
+    //{
+    //	get => result;
+    //	set
+    //	{
+    //		result = value;
+    //		ResultLabel.Text = "You " + result;
+    //	}
+    //}
+
+    public GameOverPage()
 	{
 		InitializeComponent();
 	}
