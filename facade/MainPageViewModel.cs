@@ -84,11 +84,7 @@ namespace facade
            
         }
 
-        [RelayCommand]
-        async void newPage()
-        {
-            await Shell.Current.GoToAsync($"{nameof(MainPage)}");
-        }
+        
 
 
 
