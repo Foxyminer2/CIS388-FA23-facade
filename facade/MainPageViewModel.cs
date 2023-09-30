@@ -126,18 +126,7 @@ namespace facade
            
         }
 
-        [RelayCommand]
-        async void Answer()
-        {
-            if(Guesses.Count >= 5 || Guesses.Count >= 5)
-            {
-                End = HexColor;
-            }
-            else
-            {
-                End = "";
-            }
-        }
+    
 
 		[RelayCommand]
 		async Task NewPage()
