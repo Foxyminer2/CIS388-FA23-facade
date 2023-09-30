@@ -21,7 +21,8 @@
 
             <RoundRectangle Grid.Row="0" Fill="beige" CornerRadius="90" MaximumHeightRequest="100" MaximumWidthRequest="370" TranslationY="-30" /> 
 
-            <RoundRectangle Grid.Row="0" Fill="#facade" CornerRadius="180" MaximumHeightRequest="100" MaximumWidthRequest="100" TranslationY="90"/> 
+            <RoundRectangle  Grid.Row="0" Fill="{Binding SecretColor.Color}" CornerRadius="180" MaximumHeightRequest="100" MaximumWidthRequest="100" TranslationY="90"/>
+
             
                        
             <StackLayout HorizontalOptions="Fill"  Padding="8" Grid.Row="0" Orientation="Horizontal"  >
@@ -73,6 +74,16 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+
+             
+            <Label
+                    Text="{Binding End}"
+                       FontSize="60"
+                       Grid.Row="0"
+                       Margin="47"
+                       TranslationX="-45"
+                       TranslationY="3"
+                       TextColor="White"/>
 
 
             <Grid Padding="12" Grid.Row="2" RowSpacing="12" ColumnSpacing="12">

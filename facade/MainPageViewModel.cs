@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -10,14 +12,21 @@ namespace facade
         public bool DidWin { get; set; } = true;
 
         [ObservableProperty]
-		private string secretColor;
+		private ColorGuess secretColor;
 
-		[ObservableProperty]
+        [ObservableProperty]
+        private ColorGuess endResult;
+
+        [ObservableProperty]
 		private string currentGuess;
 
-        
+        [ObservableProperty]
+        private string hexColor;
 
+        [ObservableProperty]
+        private string end;
 
+       
 
         public ObservableCollection<ColorGuess> Guesses { get; set; }
         
@@ -26,20 +35,34 @@ namespace facade
 
         public MainPageViewModel()
 		{
-			secretColor = "FACADE";
-			currentGuess = "";
-			
-			
+            hexColor = "";
+            currentGuess = "";
 
-			Guesses = new ObservableCollection<ColorGuess>();
+            Random rnd = new Random();
 
-			//Guesses.Add( new ColorGuess("#beaded")  );
-   //         Guesses.Add( new ColorGuess("#efaced") );
+            String str = "ABCDEF";
+            int Size = 6;
+
+            for (int i = 0; i < Size; i++)
+            {
+
+                // Selecting a index randomly
+                int x = rnd.Next(str.Length);
+
+                // Appending the character at the 
+                // index to the random alphanumeric string.
+                hexColor = hexColor + str[x];
+            }
+
+            secretColor = new ColorGuess(hexColor);
+
+            SecretColor = secretColor;
+
+            Guesses = new ObservableCollection<ColorGuess>();
 
         }
 
-
-		[RelayCommand]
+        [RelayCommand]
 		void AddLetter(string letter)
 		{
 			if( CurrentGuess.Length < 6)
@@ -60,16 +83,21 @@ namespace facade
 			
 
 			// if correct, then go to game over (DidWin=true)
-			if (CurrentGuess == SecretColor)
+			if (CurrentGuess == hexColor)
 			{
-				
+                
+                
+                //System.Threading.Thread.Sleep(3000);
                 await Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}");
                 CurrentGuess = string.Empty;
                 Guesses.Clear();
 
+
             }
 			else if (Guesses.Count >= 5){
+
                 
+                //System.Threading.Thread.Sleep(3000);
                 await Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin == false}");
 				Guesses.Clear();
                 CurrentGuess = string.Empty;
@@ -98,10 +126,24 @@ namespace facade
            
         }
 
+        [RelayCommand]
+        async void Answer()
+        {
+            if(Guesses.Count >= 5 || Guesses.Count >= 5)
+            {
+                End = HexColor;
+            }
+            else
+            {
+                End = "";
+            }
+        }
+
 		[RelayCommand]
 		async Task NewPage()
 		{
 			await Shell.Current.GoToAsync($"..");
+
 		}
 		
 

@@ -10,10 +10,10 @@ public partial class GameOverPage : ContentPage
 		set
 		{
 			didWin = value;
-			if(didWin)
+			if (didWin)
 			{
 				ResultLabel.Text = "You Won!";
-				
+
 			}
 			else
 			{
@@ -22,30 +22,31 @@ public partial class GameOverPage : ContentPage
 		}
 	}
 
-    async void Button_Clicked(System.Object sender, System.EventArgs e)
-    {
+	async void Button_Clicked(System.Object sender, System.EventArgs e)
+	{
 
-        await Shell.Current.GoToAsync($"{nameof(MainPage)}");
-    }
+		await Shell.Current.GoToAsync($"{nameof(MainPage)}");
+	}
 
-    //private string result;
-    //public string Result
-    //{
-    //	get => result;
-    //	set
-    //	{
-    //		result = value;
-    //		ResultLabel.Text = "You " + result;
-    //	}
-    //}
+	//private string result;
+	//public string Result
+	//{
+	//	get => result;
+	//	set
+	//	{
+	//		result = value;
+	//		ResultLabel.Text = "You " + result;
+	//	}
+	//}
 
-    public GameOverPage()
+	public GameOverPage()
 	{
 		InitializeComponent();
 	}
 
-    async void Button_Clicked_1(System.Object sender, System.EventArgs e)
-    {
-        await Shell.Current.GoToAsync($"..");
-    }
+	async void Button_Clicked_1(System.Object sender, System.EventArgs e)
+	{
+		await Shell.Current.GoToAsync($"..");
+	}
+
 }
