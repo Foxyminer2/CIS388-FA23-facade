@@ -1,8 +1,12 @@
 ﻿namespace facade;
 
 [QueryProperty("DidWin", "DidWin")]
+[QueryProperty("SecretColor", "SecretColor")]
 public partial class GameOverPage : ContentPage
 {
+	private string secretColor;
+	public string SecretColor { get => secretColor; set { secretColor = value; ColorLabel.Text = value; } }
+
 	private bool didWin;
 	public bool DidWin
 	{
@@ -28,16 +32,6 @@ public partial class GameOverPage : ContentPage
 		await Shell.Current.GoToAsync($"{nameof(MainPage)}");
 	}
 
-	//private string result;
-	//public string Result
-	//{
-	//	get => result;
-	//	set
-	//	{
-	//		result = value;
-	//		ResultLabel.Text = "You " + result;
-	//	}
-	//}
 
 	public GameOverPage()
 	{

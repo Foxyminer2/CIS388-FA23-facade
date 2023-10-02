@@ -5,10 +5,7 @@
              x:Class="facade.GameOverPage"
              BackgroundColor="Black"
              Title="GameOverPage"
-             
              >
-             
-
   <VerticalStackLayout TranslationY="100">
 
          <Label
@@ -42,27 +39,26 @@
             TranslationY="-187"
             TranslationX="-4"/>
 
-        <Button MaximumHeightRequest="120" MaximumWidthRequest="350"
+        <Button MaximumHeightRequest="120" MaximumWidthRequest="270"
                
-               Text="Play Again?"
+               x:Name="ColorLabel"
+               HorizontalOptions="Center"
                FontSize="60"
                TranslationX="0"
+               Padding="10"
+               TextColor="white"
                TranslationY="-110"
-               Clicked="Button_Clicked_1"
+               
                />
 
-        <Button  BackgroundColor="white" MinimumHeightRequest="85" MaximumWidthRequest="300"
-            Text="NEW GAME"
+        <Button  BackgroundColor="white" MinimumHeightRequest="85" MaximumWidthRequest="320"
+            Text="NEW GAME?"
             TextColor="Black"
                FontSize="50"
                HorizontalOptions="Center"
                TranslationY="-25"
                Clicked="Button_Clicked_1"
                />
-
-        <!--<Hyperlink NavigateUri="MainPage.xaml">
-          Navigate to Another Page
-        </Hyperlink>-->
             
     </VerticalStackLayout>
 </ContentPage>

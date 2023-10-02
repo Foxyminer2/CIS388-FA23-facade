@@ -14,8 +14,8 @@ namespace facade
         [ObservableProperty]
 		private ColorGuess secretColor;
 
-        [ObservableProperty]
-        private ColorGuess endResult;
+        //[ObservableProperty]
+        //private ColorGuess endResult;
 
         [ObservableProperty]
 		private string currentGuess;
@@ -23,10 +23,9 @@ namespace facade
         [ObservableProperty]
         private string hexColor;
 
-        [ObservableProperty]
-        private string end;
+        //[ObservableProperty]
+        //private string end;
 
-       
 
         public ObservableCollection<ColorGuess> Guesses { get; set; }
         
@@ -35,8 +34,14 @@ namespace facade
 
         public MainPageViewModel()
 		{
-            hexColor = "";
-            currentGuess = "";
+            Guesses = new ObservableCollection<ColorGuess>();
+            ResetGame();
+        }
+
+        void ResetGame() {
+            Guesses.Clear();
+            HexColor = "";
+            CurrentGuess = "";
 
             Random rnd = new Random();
 
@@ -45,20 +50,12 @@ namespace facade
 
             for (int i = 0; i < Size; i++)
             {
-
-                // Selecting a index randomly
                 int x = rnd.Next(str.Length);
-
-                // Appending the character at the 
-                // index to the random alphanumeric string.
-                hexColor = hexColor + str[x];
+                HexColor = HexColor + str[x];
             }
 
-            secretColor = new ColorGuess(hexColor);
-
-            SecretColor = secretColor;
-
-            Guesses = new ObservableCollection<ColorGuess>();
+            SecretColor = new ColorGuess(HexColor);
+            Console.WriteLine(SecretColor.Guess);
 
         }
 
@@ -78,29 +75,26 @@ namespace facade
         }
 
         [RelayCommand]
-        async void Guess()
+        async Task Guess()
 		{
 			
 
-			// if correct, then go to game over (DidWin=true)
-			if (CurrentGuess == hexColor)
+			
+			if (CurrentGuess == HexColor)
 			{
-                
-                
-                //System.Threading.Thread.Sleep(3000);
-                await Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}");
-                CurrentGuess = string.Empty;
-                Guesses.Clear();
+                DidWin = true;
 
+                await Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}&SecretColor={SecretColor.Guess}");
+                ResetGame();
+                
 
             }
 			else if (Guesses.Count >= 5){
-
+                DidWin = false;
+                await Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}&SecretColor={SecretColor.Guess}");
+                ResetGame();
                 
-                //System.Threading.Thread.Sleep(3000);
-                await Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin == false}");
-				Guesses.Clear();
-                CurrentGuess = string.Empty;
+
 
             }
 
@@ -116,24 +110,11 @@ namespace facade
                 }
                 
             }
-
-			// else if this is the 6th guess (and it's wrong)
-			// then go to game over (DidWin=false)
-
-
-			// Add this guess to the Guesses
 			
            
         }
 
-    
-
-		[RelayCommand]
-		async Task NewPage()
-		{
-			await Shell.Current.GoToAsync($"..");
-
-		}
+   
 		
 
     }
